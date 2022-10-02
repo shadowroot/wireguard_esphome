@@ -1,0 +1,13 @@
+{
+  "storage_version": 1,
+  "name": "esp32_generic",
+  "comment": null,
+  "esphome_version": "2022.9.2",
+  "src_version": 1,
+  "address": "esp32_generic.local",
+  "web_port": null,
+  "esp_platform": "ESP32",
+  "build_path": null,
+  "firmware_bin_path": null,
+  "loaded_integrations": []
+}

@@ -2,8 +2,9 @@
 esphome:
   includes:
     - include/wg_simple_component.h
-    - lib/WireGuard-ESP32-Arduino
-    
+    #- lib/WireGuard-ESP32-Arduino
+  libraries:
+    - ciniml/WireGuard-ESP32@^0.1.5
 
 wg_simple_component:
 - lambda: |-
