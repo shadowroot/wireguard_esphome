@@ -1,0 +1,16 @@
+# Example configuration entry
+esphome:
+  includes:
+    - include/wg_simple_component.h
+    - lib/WireGuard-ESP32-Arduino
+    
+
+wg_simple_component:
+- lambda: |-
+    auto wg_simple_component = new WgEsphome(
+          const char * private_key, 
+          const char * public_key, 
+          IPAddress(10,0,200,7), 
+          "p2psw.space", 
+          11011);
+    return {wg_simple_component};
