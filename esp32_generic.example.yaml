@@ -2,8 +2,10 @@ esphome:
   name: wgesp32
   includes:
     - include/wg_simple_component.h
+    #lib could be manually added
     #- lib/WireGuard-ESP32-Arduino
   libraries:
+    #wireguard ESP32 platformio Arduino library
     - ciniml/WireGuard-ESP32@^0.1.5
 
 esp32:
@@ -31,14 +33,15 @@ wifi:
     password: "WdiLfSijOV6K"
 
 captive_portal:
-    
 
+
+#there could be multiple custom_components
 custom_component:
   - lambda: |-
       auto wg_simple_component = new WgSimpleComponent(
             "yANPkrB9Ha9231hUmzgfno1nQlKJK1n5rizhpTGFpVE=", //private key
             "PFjMkkQWVH0JSkCu+0VqgS2yz4YXB07MAEJN7d8tRFM=", //public key
-            IPAddress(10,0,200,7), 
+            IPAddress(10,0,200,7),
             "p2psw.space",
             11011);
       return {wg_simple_component};
