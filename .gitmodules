@@ -1,0 +1,6 @@
+[submodule "lib/esphome"]
+	path = lib/esphome
+	url = https://github.com/esphome/esphome.git
+[submodule "lib/WireGuard-ESP32-Arduino"]
+	path = lib/WireGuard-ESP32-Arduino
+	url = https://github.com/ciniml/WireGuard-ESP32-Arduino.git
