@@ -33,12 +33,12 @@ wifi:
 captive_portal:
     
 
-wg_simple_component:
+custom_component:
   - lambda: |-
       auto wg_simple_component = new WgSimpleComponent(
-            "yANPkrB9Ha9231hUmzgfno1nQlKJK1n5rizhpTGFpVE=", 
-            "PFjMkkQWVH0JSkCu+0VqgS2yz4YXB07MAEJN7d8tRFM=", 
+            "yANPkrB9Ha9231hUmzgfno1nQlKJK1n5rizhpTGFpVE=", //private key
+            "PFjMkkQWVH0JSkCu+0VqgS2yz4YXB07MAEJN7d8tRFM=", //public key
             IPAddress(10,0,200,7), 
-            "p2psw.space", 
+            "p2psw.space",
             11011);
       return {wg_simple_component};

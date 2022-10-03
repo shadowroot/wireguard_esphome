@@ -1,17 +1,18 @@
 # Example configuration entry
 esphome:
+  name: 
   includes:
     - include/wg_simple_component.h
     #- lib/WireGuard-ESP32-Arduino
   libraries:
     - ciniml/WireGuard-ESP32@^0.1.5
 
-wg_simple_component:
-- lambda: |-
-    auto wg_simple_component = new WgEsphome(
-          const char * private_key, 
-          const char * public_key, 
-          IPAddress(10,0,200,7), 
-          "p2psw.space", 
-          11011);
-    return {wg_simple_component};
+custom_component:
+  - lambda: |-
+      auto wg_simple_component = new WgEsphome(
+            const char * private_key, 
+            const char * public_key, 
+            IPAddress(10,0,200,7), 
+            "p2psw.space", 
+            11011);
+      return {wg_simple_component};
