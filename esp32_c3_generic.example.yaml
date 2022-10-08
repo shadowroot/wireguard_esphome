@@ -1,0 +1,71 @@
+esphome:
+  name: wgesp32
+  includes:
+    - include/wg_idf_simple_component.h
+    #lib could be manually added
+    #- lib/WireGuard-ESP32-Arduino
+    - lib/esp_wireguard/include/esp_wireguard.h
+    - lib/esp_wireguard/src
+    # - lib/esp_wireguard/src/crypto.c
+    # - lib/esp_wireguard/src/crypto.h
+    # - lib/esp_wireguard/src/crypto/refc/blake2s.c
+    # - lib/esp_wireguard/src/crypto/refc/blake2s.h
+    # - lib/esp_wireguard/src/crypto/refc/chacha20.c
+    # - lib/esp_wireguard/src/crypto/refc/chacha20.h
+    # - lib/esp_wireguard/src/crypto/refc/chacha20poly1305.c
+    # - lib/esp_wireguard/src/crypto/refc/chacha20poly1305.h
+    # - lib/esp_wireguard/src/crypto/refc/poly1305-donna-32.h
+    # - lib/esp_wireguard/src/crypto/refc/poly1305-donna.c
+    # - lib/esp_wireguard/src/crypto/refc/poly1305-donna.h
+    # - lib/esp_wireguard/src/crypto/refc/x25519.c
+    # - lib/esp_wireguard/src/crypto/refc/x25519.h
+    # - lib/esp_wireguard/src/esp_wireguard.c
+    # - lib/esp_wireguard/src/nacl/crypto_scalarmult/curve25519/ref/crypto_scalarmult.h
+    # - lib/esp_wireguard/src/nacl/crypto_scalarmult/curve25519/ref/smult.c
+    # - lib/esp_wireguard/src/wireguard-platform.c
+    # - lib/esp_wireguard/src/wireguard-platform.h
+    # - lib/esp_wireguard/src/wireguard.c
+    # - lib/esp_wireguard/src/wireguard.h
+    # - lib/esp_wireguard/src/wireguardif.c
+    # - lib/esp_wireguard/src/wireguardif.h
+  # libraries:
+  #   #wireguard ESP32 platformio Arduino library
+  #   - ciniml/WireGuard-ESP32@^0.1.5
+
+esp32:
+  board: esp32-c3-devkitm-1
+  framework:
+    type: esp-idf
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: ""
+
+ota:
+  password: ""
+
+wifi:
+  ssid: "Test"
+  password: ""
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esp32 Generic Fallback Hotspot"
+    password: "WdiLfSijOV6K"
+
+#captive_portal:
+
+
+#there could be multiple custom_components
+custom_component:
+  - lambda: |-
+      auto wg_simple_component = new WgSimpleComponent(
+            "yANPkrB9Ha9231hUmzgfno1nQlKJK1n5rizhpTGFpVE=", //private key
+            "PFjMkkQWVH0JSkCu+0VqgS2yz4YXB07MAEJN7d8tRFM=", //public key
+            "10.0.200.7",
+            "p2psw.space",
+            11011);
+      return {wg_simple_component};

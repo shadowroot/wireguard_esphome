@@ -4,3 +4,6 @@
 [submodule "lib/WireGuard-ESP32-Arduino"]
 	path = lib/WireGuard-ESP32-Arduino
 	url = https://github.com/ciniml/WireGuard-ESP32-Arduino.git
+[submodule "lib/esp_wireguard"]
+	path = lib/esp_wireguard
+	url = https://github.com/trombik/esp_wireguard.git

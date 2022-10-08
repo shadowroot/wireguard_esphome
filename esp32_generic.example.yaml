@@ -1,7 +1,7 @@
 esphome:
   name: wgesp32
   includes:
-    - include/wg_simple_component.h
+    - include/wg_arduino_simple_component.h
     #lib could be manually added
     #- lib/WireGuard-ESP32-Arduino
   libraries:
